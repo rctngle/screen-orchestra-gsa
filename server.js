@@ -37,7 +37,9 @@ app.get('/ip', function(req, res) {
 });	
 
 http.listen(3000, function(){
+	console.log('⚠️ update controller.js and monitor.js ⚠️');
 	console.log('http://'+ip.address()+':3000');
+	
 });
 
 io.on('connection', function(client){
