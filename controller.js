@@ -1,4 +1,4 @@
-const ip = '192.168.8.100';
+const ip = '192.168.1.2';
 document.querySelector('#ip').innerHTML = ip;
 
 var socket = io('http://' + ip + ':3000');
@@ -21,16 +21,14 @@ document.querySelectorAll('a').forEach((link) => {
 	});
 });
 
-
 function setActive(listItem) {
 	document.querySelectorAll('.active').forEach((el) => {
-		console.log(el);
 		el.classList.remove('active');
 	});
 	listItem.classList.add('active');
 }
 
-fetch('http://' + ip + ':3000/animations-actions').then(response => response.json()).then(data => {
+fetch('http://' + ip + ':3000/commands').then(response => response.json()).then(data => {
 	for (let list in data) {
 		data[list].forEach((item) => {
 			if (item.indexOf('.') !== 0) {

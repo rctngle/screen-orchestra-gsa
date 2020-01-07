@@ -20,13 +20,13 @@ app.get('/monitor', function(req, res){
 	res.sendFile(__dirname + '/monitor.html');
 });	
 
-app.get('/animations-actions', function(req, res) {
-	const animations = fs.readdirSync('./animations/');
-	const actions = fs.readdirSync('./actions/');
+app.get('/commands', function(req, res) {
+	const shared = fs.readdirSync('./commands/shared/');
+	const individual = fs.readdirSync('./commands/individual/');
 
 	res.json({
-		animations: animations,
-		actions: actions,
+		shared: shared,
+		individual: individual,
 	});
 });	
 
