@@ -3,8 +3,24 @@
 
 <head>
     <title></title>
-    <style>
-    	/* styles go here */
+    <style type="text/css">
+    	marquee {
+    		background-color: pink;
+    		font-size: 150px;
+    		font-family: 'Monserrat';
+    		color: green;
+    		text-align: center;
+    	}
+
+    	marquee:nth-child(odd){
+    		background-color: yellow;
+    		color: pink;
+    	}
+
+    	.neon {
+    		background-color: yellow;
+    		color: pink;
+    	}
     </style>
 
     <script>
@@ -13,8 +29,12 @@
 </head>
 
 <body>
-	<!-- content goes here -->
-	typography
+	<marquee class="neon" scrollamount="50">BEAUTIFUL TEXT</marquee>
+	<marquee direction="up" scrollamount="30">BEAUTIFUL TEXT</marquee>
+	<marquee direction="down" scrollamount="30">BEAUTIFUL TEXT</marquee>
+	<marquee direction="right" scrollamount="50">BEAUTIFUL TEXT</marquee>
+	<marquee scrollamount="100">BEAUTIFUL TEXT</marquee>
+
 </body>
 
 </html>
