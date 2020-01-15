@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<style type="text/css">
+		body {
+			overflow: hidden;
+			margin: 0;
+			width: 100vw;
+			height: 100vh;
+			background-size: contain;
+			background-image: url(http://voc.axiscam.net/axis-cgi/mjpg/video.cgi);
+			/*http://92.60.192.245/cgi-bin/faststream.jpg?stream=full&fps=0
+
+			http://194.164.144.234/cgi-bin/faststream.jpg?stream=full&fps=24
+
+			*/
+
+			background-repeat: no-repeat;
+			background-position: center;
+			background-color: #000;
+		}
+
+	</style>
+
+
+</head>
+<body>
+
+	<script type="text/javascript">
+		var urls = [
+			'http://92.60.192.245/cgi-bin/faststream.jpg?stream=full&fps=0',
+			'http://194.164.144.234/cgi-bin/faststream.jpg?stream=full&fps=24',
+			'http://voc.axiscam.net/axis-cgi/mjpg/video.cgi'
+
+		];
+
+		let index = 0;
+
+		switchStreams();
+
+		setInterval(switchStreams, 3000);
+
+		function switchStreams(){
+			document.querySelector('body').style.backgroundImage = 'url('+urls[index]+')';
+			if(index === urls.length-1){
+				index = 0;
+			} else {
+				index++;
+			}
+			
+		}
+
+	</script>
+</body>
+</html>
