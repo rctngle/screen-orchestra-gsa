@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title></title>
+    <style type="text/css">
+        body {
+            margin: 0;
+        }
+        @font-face {
+            font-family: 'Univers-Web';
+            src: url('UniversLTStd-XBlackEx.otf') format('opentype');
+        }
+    	marquee {
+    		background-color: red;
+    		font-size: 90px;
+    		font-family: 'Univers-Web';
+    		color: blue;
+    		text-align: center;
+            display: block;
+            line-height: 1.65;
+
+    	}
+
+    	marquee:nth-child(odd){
+    		background-color: blue;
+    		color: red;
+    	}
+
+    	.neon {
+    		background-color: yellow;
+    		color: blue;
+    	}
+        #top {
+            height: 24vh;
+        }
+        #bottom {
+            height: 24vh;
+        }
+        #centre {
+            height: 52vh;
+        }
+    </style>
+
+    <script>
+    	// scripts go here
+    </script>
+</head>
+
+<body>
+	<marquee id="top" direction="right" scrollamount="50">PESKY PESCATARIANS!</marquee>
+	<marquee id="centre" direction="up" scrollamount="30">BILLIONS OF BLISTERING BLUE BARNACLES!!!</marquee>
+	<marquee id="bottom" direction="right" scrollamount="30">PESKY PESCATARIANS!</marquee>
+	
+
+</body>
+
+</html>

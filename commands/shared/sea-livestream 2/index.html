@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<style type="text/css">
+		body {
+			overflow: hidden;
+			margin: 0;
+			width: 100vw;
+			height: 100vh;
+			background-size: contain;
+			background-image: url(http://voc.axiscam.net/axis-cgi/mjpg/video.cgi);
+			/*http://92.60.192.245/cgi-bin/faststream.jpg?stream=full&fps=0
+
+			http://194.164.144.234/cgi-bin/faststream.jpg?stream=full&fps=24
+
+			*/
+
+			background-repeat: no-repeat;
+			background-position: center;
+			background-color: #000;
+		}
+
+	</style>
+
+
+</head>
+<body>
+
+	<script type="text/javascript">
+		var urls = [
+			'http://92.60.192.245/cgi-bin/faststream.jpg?stream=full&fps=0',
+			'http://194.164.144.234/cgi-bin/faststream.jpg?stream=full&fps=24',
+			'http://voc.axiscam.net/axis-cgi/mjpg/video.cgi', 'http://vseacottages.dyndns.org/cgi-bin/faststream.jpg?stream=full&fps=24', 'http://ausable-huron.axiscam.net/mjpg/video.mjpg', 'http://mw-otaru.miemasu.net/nphMotionJpeg?resolution=640x480', 'http://h2owebcam.axiscam.net/mjpg/video.mjpg', 'http://212.142.228.68/axis-cgi/mjpg/video.cgi', 'http://218.224.118.87/-wvhttp-01-/getoneshot?camera_id=1&frame_count=no_limit', 'http://192.171.163.3/mjpg/video.mjpg', 'http://avptcam.uconn.edu/mjpg/video.mjpg', 'http://83.64.164.4/mjpg/video.mjpg', 'http://217.168.94.131/mjpg/video.mjpg', 'http://webcam.fitjar.kommune.no/nphMotionJpeg?resolution=640x480', 'http://cam.balloonfacility.com/nphMotionJpeg?resolution=640x480'
+
+		];
+
+		let index = 0;
+
+		switchStreams();
+
+		setInterval(switchStreams, 5000);
+
+		function switchStreams(){
+			document.querySelector('body').style.backgroundImage = 'url('+urls[index]+')';
+			if(index === urls.length-1){
+				index = 0;
+			} else {
+				index++;
+			}
+			
+		}
+
+	</script>
+</body>
+</html>
