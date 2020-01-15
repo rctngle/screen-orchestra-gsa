@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Lizzie Cool Animation</title>
+	<style type="text/css">
+		body {
+			width: 100vw;
+			height: 100vh;
+			//background: linear-gradient(to bottom, #000, #ff0000, #FFF);
+		}
+
+		div {
+			position: fixed;
+			width: 200px;
+			height: 200px;
+			background: red;
+			border: 10px solid #000;
+			transition: 400ms;
+		}
+		
+	</style>
+	<script type="text/javascript">
+		
+		document.addEventListener('DOMContentLoaded', function(){
+
+			
+			setInterval(function(){
+				var blocks = document.querySelectorAll('div');
+
+				blocks.forEach(function(block){
+					block.style.top = 200 + Math.floor(Math.random() * 200) + 'px';
+					block.style.left = Math.floor(Math.random() * window.innerWidth) + 'px';
+					
+				});
+
+			}, 400);
+		});
+
+	</script>
+</head>
+<body>
+
+	<div id="block-1"></div>
+	<div id="block-2"></div>
+	<div></div>
+	<div></div>
+	<div></div>
+</body>
+</html>
