@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<style type="text/css">
+
+		body {
+  			background-image: url('shades.png');
+  			background-repeat: no-repeat;
+  			background-attachment: fixed;
+  			background-size: cover;
+  			overflow: hidden;
+		}
+
+		div {
+			font-family: 'eurostile';
+			font-size: 5vw;
+			position: absolute;
+			left: 50vh;
+			top: 50vh;
+		}
+		
+
+
+		.DT1 {
+			position: relative;
+			top: 10;
+			left : 50;
+			z-index: 2;
+		}
+
+		#Clocks-01 img {
+			position: relative;
+			top: 30;
+			left : 50;
+			z-index: 2;
+		}
+
+		#Clocks-02 img {
+			position: absolute;
+			top: 60;
+			left : 500;
+		}
+
+		#Clocks-03 img {
+			position: absolute;
+			top: 90;
+			left : 180;
+		}
+
+		#Clocks-04 img {
+			position: absolute;
+			top: 120;
+			left : 50;
+		}
+
+		#Clocks-05 img {
+			position: absolute;
+			top: 150;
+			left : 300;
+		}
+
+		#hours {
+			font-family: eurostile;
+			color: black;
+			font-size: 36px;
+			top: 0;
+			left: 0;
+			float: left;
+			height: 100vh;
+			width: 100vw;
+			position: absolute;	
+			z-index: 2;
+			display: flex;
+		}
+		marquee span {
+			display: inline-block;
+			transform: rotate(90deg);
+		}
+
+		.one {
+			top: 100;
+			left : 40;
+			writing-mode: vertical;
+		}
+
+		#character {
+			top: 0;
+			position: absolute;
+			z-index: 1;	
+			width: 1280px;
+		}
+
+		#fuck {
+			font-family: eurostile;
+			color: black;
+			font-size: 36px;
+			top: 100;
+			left: 100;
+			position: absolute;	
+			z-index: 2;
+		}
+
+
+
+		
+
+
+		
+
+	</style>
+
+
+</head>
+<body>
+
+	<div id="clocks">
+		<div id="Clocks-01"><img src="Clocks-01.png" width="70"></div>
+		<div id="Clocks-02"><img src="Clocks-02.png" width="70"></div>
+		<div id="Clocks-03"><img src="Clocks-03.png" width="70"></div>
+		<div id="Clocks-04"><img src="Clocks-04.png" width="70"></div>
+		<div id="Clocks-05"><img src="Clocks-05.png" width="70"></div>
+	</div>
+
+	<div id="hours">
+		<marquee class="special" id="one" scrollamount="10" direction="down"><span>10:52</span></marquee>
+		<marquee id="two" scrollamount="15" direction="down"><span>11:34</span></marquee>
+		<marquee id="three" scrollamount="15" direction="down"><span>12:46</span></marquee>
+		<marquee class="special" id="four" scrollamount="20" direction="down"><span>2:33</span></marquee>
+		<marquee id="five" scrollamount="15" direction="down"><span>3:11</span></marquee>
+		<marquee id="six" scrollamount="15" direction="down"><span>4:59</span></marquee>
+		<marquee class="special" id="seven" scrollamount="30" direction="down"><span>5:18</span></marquee>
+		<marquee id="eight" scrollamount="15" direction="down"><span>6:37</span></marquee>
+		<marquee id="nine" scrollamount="15" direction="down"><span>7:41</span></marquee>
+		<marquee id="ten" scrollamount="15" direction="down"><span>8:03</span></marquee>
+		<marquee id="eleven" scrollamount="40" direction="down"><span>9:27</span></marquee>
+		<marquee id="twelve" scrollamount="15" direction="down"><span>10:52</span></marquee>
+	</div>
+
+
+	<div id="character">
+		<marquee scrollamount="18" direction="right"><img src="character.png" height="50" /></marquee>
+		<marquee scrollamount="18" direction="left"><img src="character.png" height="50" /></marquee>
+	</div>
+
+	<div class="DT1">DÉPÊCHE-TOI</div>
+	<div class="DT2">DÉPÊCHE-TOI</div>
+	<div class="DT3">DÉPÊCHE-TOI</div>
+
+
+	
+	<script type="text/javascript">
+		
+
+	</script>
+</body>
+</html>
