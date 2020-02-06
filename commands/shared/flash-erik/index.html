@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+	<head>
+	<title></title>
+
+	<style>
+
+	body {
+		margin: 0;
+		overflow: hidden;
+		display: flex;
+		flex-flow: row wrap;
+	}
+
+	div {
+		width: 50vw;
+		height: 50vh;
+		text-align: center;
+		display: flex;
+		flex-flow: column nowrap;
+		justify-content: center;
+		font-size: 5vw;
+		font-family: sans-serif;
+	}
+	div.on {
+		background-color: blue;
+		color: yellow;
+	}
+	div.on:nth-child(2),
+	div.on:nth-child(3){
+		background-color: yellow;
+		color: blue;
+	}
+	</style>
+
+</head>
+<body>
+
+	<div>BREXIT IS HAPPENING</div>
+	<div>BREXIT IS HAPPENING</div>
+	<div>BREXIT IS HAPPENING</div>
+	<div>BREXIT IS HAPPENING</div>
+
+	<script type="text/javascript">
+		
+		setInterval(()=>{
+
+			const myDivs = document.querySelectorAll('div');
+
+
+			myDivs.forEach((div)=>{
+				if(div.classList.contains('on')){
+					div.classList.remove('on');
+
+				} else {
+					div.classList.add('on');				
+				}
+			});
+			
+			
+			
+		}, 300);
+	</script>
+</body>
+</html>
