@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>首页</title>
+    <style type="text/css">
+    body {
+        margin: 0;
+        overflow: hidden;
+    }
+
+    div {
+        width: 100vw;
+        height: 100vh;
+        text-align: center;
+        display: flex;
+        flex-flow: column nowrap;
+        justify-content: center;
+        font-size: 20vw;
+        font-family: -apple-system, BlinkMacSystemFont, sans-serif;
+        font-weight: bold;
+    }
+    div.on {
+        background-color: green;
+        color: blue;
+    }
+    </style>
+
+        
+
+    </style>
+</head>
+<body>
+    <div id="Date"></div>
+    <script type="text/javascript"> 
+        setInterval(function(){   
+        var date = new Date();   
+        var year = date.getFullYear();    //获取当前年份   
+        var mon = date.getMonth()+1;      //获取当前月份   
+        var da = date.getDate();          //获取当前日   
+        var day = date.getDay();          //获取当前星期几   
+        var h = date.getHours();          //获取小时   
+        var m = date.getMinutes();        //获取分钟   
+        var s = date.getSeconds();        //获取秒   
+        var d = document.getElementById('Date');    
+          d.innerHTML=year+'/'+mon+'/'+da+' '+h+':'+m+':'+s;  
+        },1000)
+
+        setInterval(()=>{
+        const myDiv = document.querySelector('div');
+        if(myDiv.classList.contains('on')){
+            document.querySelector('div').classList.remove('on');
+        } else {
+            document.querySelector('div').classList.add('on');              
+        }
+            
+        }, 500);
+    </script>
+</body>
+</html>
