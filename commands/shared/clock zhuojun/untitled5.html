@@ -1,0 +1,36 @@
+<!DOCTYPE html>  
+<html>  
+    <head>  
+
+        <meta charset="UTF-8">  
+        <title>时钟特效</title>  
+    </head>  
+    <script type="text/javascript">  
+        function disptime(){  
+            var today=new Date();  
+            var hh=today.getHours();  
+            var mm=today.getMinutes();  
+            var ss = today.getSeconds();  
+            document.getElementById("myclock").innerHTML="<h1>now is—"+hh+":"+mm+":"+ss+"</h1>"  
+              
+        }   
+        //setInterval（）方法可以按照指定的周期调用函数或计算表达式  
+        var mytime = setInterval("disptime()",1000);  
+    </script>  
+    <body onload="disptime()">  
+        <div id="myclock"></div>  
+    </body>  
+    <title></title>
+    <style type="text/css">
+        body{
+            background-color: green; 
+        }div{
+            font-family: sans-serif;
+            font-size: 5vw;
+            position: absolute;
+        }
+      #number-1 {
+        font-size: 20vw;
+        left: 100px;
+        top: 100px;
+</html>
