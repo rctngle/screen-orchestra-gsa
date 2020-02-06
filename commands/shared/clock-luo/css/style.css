@@ -1,5 +1,6 @@
 body {
-    background-image: url(11.jpg);
+    background-image: url(22.jpg);
+    background-size: cover;
     height: 100vh;
     overflow: hidden;
 }
