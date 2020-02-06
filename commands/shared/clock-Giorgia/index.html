@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+
+	<style type="text/css">
+
+		marquee {
+		width: 100vw;
+		font-size: 200px;
+		color: red;
+		font-family: 'Helvetica';
+
+	}
+	
+    body {
+			height: 100vh;
+			overflow: hidden;
+			background-color: black;
+	}
+
+     div {
+			margin-top: -100vw;
+			animation: spin 4500ms infinite linear;
+			text-align: center;
+			top: 50%;
+			position: relative;			
+			color: #FFF;			
+			font-family: 'Helvetica';
+			font-size: 40vw;
+			line-height: 20vw;
+			white-space: nowrap;
+			font-weight: bold;
+			display: flex;
+	}
+
+	#clock1 {
+		color: red;
+		animation: spin 5000ms infinite linear;
+	}
+	
+		@keyframes spin {
+			from {transform: rotate(0deg); }
+			to { transform: rotate(360deg); }
+	}
+
+</style>
+</head>
+<body>
+
+
+<div id="clock1">____________________</div>
+<div>__________</div>
+
+
+</body>
+</html>

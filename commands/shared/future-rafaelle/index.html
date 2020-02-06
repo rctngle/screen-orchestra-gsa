@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<style type="text/css">
+		body{
+			height: 100vh;
+			overflow: hidden;
+			background: black;
+			color: #fff;
+			text-align: center;
+			font-family: sans-serif;
+			font-size: 10vw;
+			display: flex;
+			flex-flow: column nowrap;
+
+			justify-content: center;
+		}
+
+	</style>
+
+</head>
+<body>
+
+	<div id="symbols"></div>
+	<script type="text/javascript">
+
+		var symbols = [
+			':D',
+			':)',
+			':|',
+			':/',
+			':(',
+			
+			
+		];
+		var idx = 0;
+
+		function generateSymbols(){
+			document.querySelector('#symbols').innerText = '';
+			var symbolText = symbols[idx];
+			for(var i = 0; i < 1; i++){
+				var symbol = document.createElement('span');
+				symbol.innerText = symbolText;
+				document.querySelector('#symbols').appendChild(symbol);
+			}
+			if(idx === symbols.length-1){
+				idx = 0;
+			} else {
+				idx++;
+			}
+			
+			console.log(idx);
+		}
+
+		setInterval(generateSymbols, 300);
+		
+
+	</script>
+
+
+</body>
+</html>
