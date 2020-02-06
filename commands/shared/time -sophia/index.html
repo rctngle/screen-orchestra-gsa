@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>
+		
+
+	</title>
+
+	<style>
+
+	body {
+		width: 100vw;
+		height: 100vh;
+		margin: 0;
+		overflow: hidden;
+		background-size: cover;
+		background-repeat: no-repeat;
+		background-position: center;
+		background-color: #f7bb2d;
+	}
+
+	div {
+		height: 800px;
+		width: 800px;
+		display: block;
+		
+		background-image: url('fried egg.png');
+		background-size: contain;
+		background-position: center;
+		background-repeat: no-repeat;
+		position: absolute;
+		left: 50%;
+		top: 50%;
+		margin-left: -400px;
+		margin-top: -400px;
+		
+	}	
+
+	@keyframes rotate {
+		0% {transform: rotate(0deg);}
+		0.6% {transform: rotate(6deg);}
+		1.2% {transform: rotate(12deg);}
+	}
+
+
+
+	</style>
+
+</head>
+<body>
+<div id="egg">
+
+</div>
+	<script type="text/javascript">
+		var rotation = 0;
+		move();
+		function move(){
+			document.querySelector('#egg').style.transform = 'rotate('+rotation+'deg)';
+			if(rotation >= 360){
+				rotation = 0;
+			}
+			rotation += 6;
+		}
+
+		setInterval(move, 1000);
+	</script>
+</body>
+</html>
