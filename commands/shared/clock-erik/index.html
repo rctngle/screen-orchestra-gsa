@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Clock</title>
+	<style type="text/css">
+		
+		body {
+			background-color: red;
+			animation-name: fadeblack;
+  			animation-duration: 40s;
+  			animation-fill-mode: forwards;
+		}
+
+		@keyframes fadeblack {
+			from {background-color: red;}
+			to {background-color: black;}
+		}
+
+		div {
+			font-family: sans-serif;
+			font-size: 24vw;
+			color: blue;
+			animation-name: txtfadeblack;
+			animation-duration: 30s;
+			animation-fill-mode: forwards;
+			position: relative;
+  			top: 0px;
+		}
+
+		@keyframes txtfadeblack {
+		from {color: blue;}
+		to {color: #181818;}
+		}
+
+	</style>
+
+	<script>
+		var speed = 1;
+	function startTime() {
+		var text = document.getElementById('txt');
+		var today = new Date();
+		var h = today.getHours();
+		var m = today.getMinutes();
+		var s = today.getSeconds();
+		m = checkTime(m);
+		s = checkTime(s);
+		document.getElementById('txt').innerHTML =
+		h + ":" + m + ":" + s;
+		var t = setTimeout(startTime, 500);
+
+		//var id = setInterval(frame, 5);
+		let compStyles = window.getComputedStyle(text);
+		var lastTop = parseInt(compStyles['top']);
+		console.log(lastTop);
+		// console.log(document.getElementById('txt').style.top);
+		document.getElementById('txt').style.top = lastTop + speed + 'px';
+
+	}
+
+function checkTime(i) {
+  if (i < 10) {i = "0" + i}; 
+  return i;
+}
+
+
+</script>
+</head>
+<body>
+
+	<body onload="startTime()">
+
+	<div id="txt"></div>
+
+</html>

@@ -1,0 +1,120 @@
+1 <!DOCTYPE html>
+  2 <html lang="en">
+  3 <head>
+  4     <meta charset="UTF-8">
+  5     <title>Title</title>
+  6     <style>
+  7         body {
+  8             padding: 0;
+  9             margin: 0;
+ 10             background-color: rgba(0, 0, 0, 1);
+ 11         }
+ 12 
+ 13         canvas {
+ 14             background-color: rgba(255, 255, 255, 1);
+ 15             display: block;
+ 16             margin: 10px auto;
+ 17         }
+ 18     </style>
+ 19 </head>
+ 20 <body>
+ 21 <canvas id="clock" width="600" height="600">当前浏览器不支持Canvas</canvas>
+ 22 <script>
+ 23     (function(){
+ 24         let canvas = document.querySelector("#clock");
+ 25         let ctx = canvas.getContext("2d");
+ 26         existRequestAnimationFrame();
+ 27         draw(ctx);
+ 28     })();
+ 29     function existRequestAnimationFrame(){
+ 30         var vendors = ['webkit', 'moz'];
+ 31         for (var i = 0; i < vendors.length && !window.requestAnimationFrame; ++i) {
+ 32             var vp = vendors[i];
+ 33             window.requestAnimationFrame = window[vp+'RequestAnimationFrame'];
+ 34         }
+ 35         if(!window.requestAnimationFrame){
+ 36             var lastTime = 0;
+ 37             window.requestAnimationFrame = function(callback){
+ 38                 var now = new Date().getTime();
+ 39                 var nextTime = Math.max(lastTime + 16, now);//浏览器渲染的间隔时间大约16ms
+ 40                 return window.setTimeout(function(){
+ 41                     callback(lastTime = nextTime);
+ 42                 },nextTime - now);
+ 43             };
+ 44         }
+ 45     }
+ 46     function draw(ctx){
+ 47         requestAnimationFrame(function step(){
+ 48             drawDial(ctx); //绘制表盘
+ 49             drawAllHands(ctx); //绘制时分秒针
+ 50             requestAnimationFrame(step);
+ 51         });
+ 52     }
+ 53     /*绘制时分秒针*/
+ 54     function drawAllHands(ctx){
+ 55         let time = new Date();
+ 56         let s = time.getSeconds(),m = time.getMinutes(),h = time.getHours();
+ 57         let pi = Math.PI;
+ 58         let secondAngle = pi / 180 * 6 * s + time.getMilliseconds()*pi*6/1000/180;  //计算出来s针的弧度
+ 59         let minuteAngle = pi / 180 * 6 * m + secondAngle / 60;  //计算出来分针的弧度
+ 60         let hourAngle = pi / 180 * 30 * h + minuteAngle / 12;  //计算出来时针的弧度
+ 61         drawHand(hourAngle, 90, 6, "NavyBlue", ctx);  //绘制时针
+ 62         drawHand(minuteAngle, 146, 4, "black", ctx);  //绘制分针
+ 63         drawHand(secondAngle, 248, 2, "red", ctx);  //绘制秒针
+ 64     }
+ 65     /* 绘制时针、或分针、或秒针
+ 66      * 参数1：要绘制的针的角度
+ 67      * 参数2：要绘制的针的长度
+ 68      * 参数3：要绘制的针的宽度
+ 69      * 参数4：要绘制的针的颜色
+ 70      * 参数4：ctx
+ 71      * */
+ 72     function drawHand(angle, len, width, color, ctx){
+ 73         ctx.save();
+ 74         ctx.translate(300, 300); //把坐标轴的远点平移到原来的中心
+ 75         ctx.rotate(-Math.PI / 2 + angle);  //旋转坐标轴。 x轴就是针的角度
+ 76         ctx.beginPath();
+ 77         ctx.moveTo(-4, 0);
+ 78         ctx.lineTo(len, 0);  // 沿着x轴绘制针
+ 79         ctx.lineWidth = width;
+ 80         ctx.strokeStyle = color;
+ 81         ctx.lineCap = "round";
+ 82         ctx.stroke();
+ 83         ctx.closePath();
+ 84         ctx.restore();
+ 85     }
+ 86     /*绘制表盘*/
+ 87     function drawDial(ctx){
+ 88         let pi = Math.PI;
+ 89         ctx.clearRect(0, 0, 600, 600); //清除所有内容
+ 90         ctx.save();
+ 91 
+ 92         //设置canvas四边角弧度区域为背景色
+ 93         ctx.translate(0, 0);
+ 94         ctx.beginPath();
+ 95         ctx.fillStyle = 'rgba(0, 0, 0, 1)';
+ 96         ctx.fillRect(0,0,600,600);
+ 97         ctx.fill();
+ 98         ctx.translate(300, 300);
+ 99         ctx.beginPath();
+100         ctx.arc(0, 0, 300, 0, 2 * pi); //绘制圆周
+101         ctx.fillStyle = 'rgb(255,255,255)';
+102         ctx.fill();
+103         ctx.stroke();
+104         ctx.closePath();
+105         //绘制数字
+106         for (let i = 0; i < 12; i++){
+107             let deg = -pi / 2 + i * pi / 6 + pi / 180 * 30,//旋转的角度
+108                 text = (i+1)+'';//数值
+109             ctx.save();
+110             ctx.beginPath();
+111             ctx.font = '27px Microsoft Yahei';
+112             ctx.fillStyle = 'rgb(0,0,0)';
+113             ctx.fillText(text, 250*Math.cos(deg) - 6, 250*Math.sin(deg) + 7);
+114             ctx.restore();
+115         }
+116         ctx.restore();
+117     }
+118 </script>
+119 </body>
+120 </html>
