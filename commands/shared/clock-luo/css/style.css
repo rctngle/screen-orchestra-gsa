@@ -1,5 +1,5 @@
 body {
-    background: #7F01D3;
+    background-image: url(11.jpg);
 }
 
 .clock {
@@ -46,19 +46,19 @@ body {
 }
 
 .circle-1 {
-    background: #01DBFE;
+    background: white;
     width: 12px;
     height: 12px;
 }
 
 .circle-2 {
-    background: #01DBFE;
+    background: white;
     width: 8px;
     height: 8px;
 }
 
 .circle-3 {
-    background: #01DBFE;
+    background: white;
     width: 4px;
     height: 4px;
 }
@@ -74,7 +74,7 @@ body {
 .second-hand {
     width: 2px;
     height: 164px;
-    background: #01DBFE;
+    background: white;
     transform: translate(-50%,-100%) translateY(24px);
 }
 
@@ -85,7 +85,7 @@ body {
 .thin-hand {
     width: 4px;
     height: 50px;
-    background: #01DBFE;
+    background: white;
     transform: translate(-50%,-100%);
 }
 
@@ -93,7 +93,7 @@ body {
     width: 10px;
     height: 57px;
     border-radius: 10px;
-    background: #01DBFE;
+    background: white;
     transform: translate(-50%,-100%) translateY(-18px);
 }
 
@@ -104,7 +104,7 @@ body {
 .hour-text {
     position: absolute;
     font: 40px futura, futura, futura, futura;
-    color: #7F01D3;
+    color: white;
     transform: translate(-50%,-50%);
 }
 
@@ -117,13 +117,13 @@ body {
 
 .minute-text {
     position: absolute;
-    font: 12px Avenir Next, Helvetica, Arial, sans-serif;
-    color: #7F01D3;
+    font: 12px futura, futura, futura, futura;
+    color: white;
     transform: translate(-50%,-50%);
 }
 
 .minute-line {
-    background: #7F01D3;
+    background: white;
     width: 1px;
     height: 9px;
     transform: translate(-50%,-100%) translateY(-131px);
