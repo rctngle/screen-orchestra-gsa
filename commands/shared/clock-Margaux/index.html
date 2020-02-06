@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<style type="text/css">
+		body {
+			background-color: #D7FFB7;
+			color: #F9B8FF;
+			text-align: center;
+			font-family: sans-serif;
+			overflow: hidden;
+			width: 100%;
+			margin: 0;
+		}
+
+		marquee {
+		width: 100vw;
+		font-size: 20vh;
+		background-color: black;
+		//display: flex;
+		}
+		#marquee-1 {
+			background-color: #F9B8FF;
+			color: #D7FFB7;
+		}
+
+	</style>
+</head>
+<body>
+	
+		<marquee scrollamount="20">
+			<div class="timer"></div>
+		</marquee>
+	
+	
+		<marquee direction="right" scrollamount="20">
+			<div class="timer"></div>
+		</marquee>
+
+		<marquee id="marquee-1" scrollamount="20">
+			<div class="timer"></div>
+		</marquee>
+
+		<marquee direction="right" scrollamount="20">
+			<div class="timer"></div>
+		</marquee>
+	
+	<script type="text/javascript">
+
+    var timerVar = setInterval(countTimer, 1000);
+    var totalSeconds = 0;
+
+    function countTimer() {
+       ++totalSeconds;
+       var hour = Math.floor(totalSeconds /3600);
+       var minute = Math.floor((totalSeconds - hour*3600)/60);
+       var seconds = totalSeconds - (hour*3600 + minute*60);
+       if(hour < 10)
+         hour = "0"+hour;
+       if(minute < 10)
+         minute = "0"+minute;
+       if(seconds < 10)
+         seconds = "0"+seconds;
+
+     	document.querySelectorAll('.timer').forEach((timer)=>{
+     		timer.innerHTML = hour + ":" + minute + ":" + seconds;
+
+     	})
+    }
+		</script>
+</body>
+</html>
