@@ -1,5 +1,7 @@
 body {
     background-image: url(11.jpg);
+    height: 100vh;
+    overflow: hidden;
 }
 
 .clock {
