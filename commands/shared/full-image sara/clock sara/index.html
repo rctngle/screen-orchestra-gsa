@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html>
+<head>
+ <title></title>
+ <style type="text/css">
+  body {
+   background-color: #5207e2;   
+   background-image: url('giphy.gif');
+  }
+
+  div {
+   font-family: sans-serif;
+   font-size: 5vw;
+   position: absolute;
+   color: #9bff27;
+   mix-blend-mode: multiply;
+
+  }
+
+  	marquee {
+		font-size: 100vh;
+		font-size: 150px;
+		background-color: #14c606;
+		color: #41116b;
+		font-family: 'lot';
+	}
+ 
+	#first {
+	    background-color: #000;
+	}
+	#good {
+		background: red;
+	}
+
+	.vertical {
+		text-align: center;
+		font-family: lot;
+	}
+
+ </style>
+
+
+</head>
+<body>
+
+
+
+<marquee class='vertical' id="first" scrollamount="50">I SAY MENGYING</marquee>
+<marquee class='vertical' id="good" scrollamount="30">YOU SAY PIG</marquee>
+<marquee class='vertical' scrollamount="80">MENGYING!</marquee>
+<marquee class='vertical'direction='right' scrollamout="100">PIG!!!!!!!!</marquee>
+<marquee class='vertical' scrollamount="600">XSWL wowowo</marquee>
+ 
+
+ <script type="text/javascript">
+   
+  const names = [
+   'Lizzie',
+   'Bob',
+   'fangting',
+   'Harry'
+  ];
+
+  function randomText(){
+   document.body.innerHTML = '';
+
+   for(var i = 0; i < 100; i++){
+    var number = document.createElement('div');
+
+    let topPosition = Math.round(Math.random() * window.innerHeight);
+    let leftPosition = Math.round(Math.random() * window.innerWidth);
+      
+    number.style.top = topPosition + 'px';
+    number.style.left = leftPosition + 'px';
+    number.style.fontSize = Math.round(Math.random() * 100)+5 + 'px';
+
+    // number.innerText = Math.round(Math.random() * 100000); 
+    // number.innerText = names[Math.floor(Math.random() * names.length)];
+
+    number.innerText = Math.floor(Math.random() * 60)+':'+Math.floor(Math.random() * 60);
+
+
+
+    document.body.appendChild(number);
+
+   }
+  }
+
+
+  randomText();
+
+  setInterval(randomText, 500);
+
+
+
+ </script>
+</body>
+</html>
