@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<style type="text/css">
+		body {
+			background-color: red;			
+		}
+
+		div {
+			font-family: sans-serif;
+			font-size: 5vw;
+			position: absolute;
+		}
+
+		
+
+	</style>
+
+
+</head>
+<body>
+
+	
+
+	<script type="text/javascript">
+			
+		const names = [
+			'Lizzie',
+			'Bob',
+			'fangting',
+			'Harry'
+		];
+
+		function randomText(){
+			document.body.innerHTML = '';
+
+			for(var i = 0; i < 100; i++){
+				var number = document.createElement('div');
+
+				let topPosition = Math.round(Math.random() * window.innerHeight);
+				let leftPosition = Math.round(Math.random() * window.innerWidth);
+						
+				number.style.top = topPosition + 'px';
+				number.style.left = leftPosition + 'px';
+				number.style.fontSize = Math.round(Math.random() * 100)+5 + 'px';
+
+				// number.innerText = Math.round(Math.random() * 100000);	
+				// number.innerText = names[Math.floor(Math.random() * names.length)];
+
+				number.innerText = Math.floor(Math.random() * 60)+':'+Math.floor(Math.random() * 60);
+
+
+
+				document.body.appendChild(number);
+
+			}
+		}
+
+
+		randomText();
+
+		setInterval(randomText, 100);
+
+	</script>
+</body>
+</html>
